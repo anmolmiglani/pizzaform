@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <script defer src="JavaScript/script.js"></script>
+    <title>My Website</title>
+  </head>
+  <body>
+    <div class="container">
+      <p class="student-info">Student ID: 200534220 | Name: Anmol Miglani</p>
+
+      <h1>Pizza Order Form</h1>
+
+      <!-- Pizza Form -->
+      <form class="pizza-form" onsubmit="PizzaApp.submitForm(event)">
+        <div class="form-group">
+          <label for="pizza-size">Pizza Size:</label>
+          <select class="pizza-size" name="pizza-size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+
+        <!-- Toppings -->
+        <div class="form-group">
+          <label for="toppings">Toppings:</label>
+          <input
+            type="text"
+            class="toppings"
+            name="toppings"
+            placeholder="Enter toppings"
+          />
+        </div>
+
+        <!-- Quantity -->
+        <div class="form-group">
+          <label for="quantity">Quantity:</label>
+          <input
+            type="number"
+            class="quantity"
+            name="quantity"
+            min="1"
+            value="1"
+          />
+        </div>
+
+        <!-- Delivery Options -->
+        <div class="form-group">
+          <label>Options:</label>
+          <div class="options">
+            <div class="option">
+              <input
+                type="radio"
+                class="delivery"
+                name="delivery-option"
+                value="delivery"
+              />
+              <label for="delivery">Delivery</label>
+            </div>
+            <div class="option">
+              <input
+                type="radio"
+                class="takeaway"
+                name="delivery-option"
+                value="takeaway"
+              />
+              <label for="takeaway">Take Away</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Address -->
+        <div class="form-group">
+          <label for="address">Delivery Address:</label>
+          <textarea
+            class="address"
+            name="address"
+            placeholder="Enter delivery address"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button with Validations and performing operations in the javascript file of collecting data and showing on the page -->
+        <button type="submit">Order</button>
+        <button type="reset" onclick="PizzaApp.resetForm()">Reset</button>
+      </form>
+
+      <!-- This will show pizza details once submitted -->
+      <div class="pizza-description"></div>
+    </div>
+  </body>
+</html>
